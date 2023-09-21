@@ -14,14 +14,14 @@ const Header = () => {
                 </Link>
             </div>
             <div className="button__action">
-                <button className="button__action bg-green-500 hover:bg-green-600 text-{`color :var(--primary)`} font-bold py-2 px-4 rounded-full">
+                <Link to="/event" className="button__action bg-green-500 hover:bg-green-600 text-{`color :var(--primary)`} font-bold py-2 px-4 rounded-full">
                     Events
-                </button>
+                </Link>
             </div>
             <div className="button__action">
-                <button className="button__action bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full">
+                <Link to="/subscribedEvents" className="button__action bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full">
                     Subscribed Events
-                </button>
+                </Link>
             </div>
         </div>
     );
