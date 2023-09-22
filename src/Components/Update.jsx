@@ -1,6 +1,31 @@
-import './Update.css'
+import './Update.css';
+import { useNavigate  } from 'react-router-dom'; 
 
 const Update = () => {
+    const navigate = useNavigate (); // Initialize the useHistory hook
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+        const uuid = document.getElementById('uuid').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+
+        const data = {
+            uuid,
+            firstName,
+            lastName,
+            email,
+            phone,
+            address
+        };
+
+        console.log(data);
+
+        navigate('/');
+    };
 
     return (
         <div className="content__container">
@@ -16,7 +41,7 @@ const Update = () => {
                     </div>
                     <div className="input__container">
                         <label className='label' htmlFor="lastName">Last name</label>
-                        <input className='input__info' type="text" id="LastName" />
+                        <input className='input__info' type="text" id="lastName" /> 
                     </div>
                     <div className="input__container">
                         <label className='label' htmlFor="email">Email</label>
@@ -27,10 +52,10 @@ const Update = () => {
                         <input className='input__info' type="number" id="phone" />
                     </div>
                     <div className="input__container">
-                        <label className='label' htmlFor="Address">Address</label>
+                        <label className='label' htmlFor="address">Address</label>
                         <input className='input__info' type="text" id="address" />
                     </div>
-                    <button>Update</button>
+                    <button onClick={handleUpdate}>Update</button>
                 </form>
             </div>
         </div>
